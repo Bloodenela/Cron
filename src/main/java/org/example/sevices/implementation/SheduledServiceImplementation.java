@@ -11,8 +11,8 @@ import java.util.concurrent.TimeUnit;
 @Service
 @RequiredArgsConstructor
 public class SheduledServiceImplementation implements SheduledService {
-    private StringRedisTemplate stringRedisTemplate;
-    private SmthService service;
+    private final StringRedisTemplate stringRedisTemplate;
+    private final SmthService service;
     @Override
     public void script() {
         if(stringRedisTemplate.opsForValue().setIfAbsent("mutex", "LOCKED")){

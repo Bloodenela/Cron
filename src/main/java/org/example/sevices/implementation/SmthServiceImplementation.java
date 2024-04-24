@@ -13,7 +13,7 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class SmthServiceImplementation implements SmthService {
 
-    private SmthRepository repo;
+    private final SmthRepository repo;
 
     @Override
     public void save() {
